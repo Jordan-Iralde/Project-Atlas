@@ -13,5 +13,5 @@ int GetHealth() const;
 
 private:
     std::string name;
-    int health;
+    int health = 100;
 };

@@ -12,7 +12,7 @@ int Player::Heal(int amount)
     return health;
 }
 
-int Player::GetHealth()
+int Player::GetHealth() const
 {
     return health;
 }

@@ -3,7 +3,7 @@ add_executable(Atlas
     src/Application.cpp
     src/Logger.cpp
     src/Window.cpp
-)
+    src/Timer.cpp)
 
 target_include_directories(Atlas
 PRIVATE
