@@ -1,0 +1,72 @@
+# Build directories
+build/
+build*/
+_build/
+out/
+bin/
+lib/
+dist/
+
+# CMake
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+compile_commands.json
+CTestTestfile.cmake
+Makefile
+
+# Visual Studio
+.vs/*
+*.VC.db
+*.VC.opendb
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# CLion / IntelliJ
+.idea/
+
+# VS Code
+.vscode/
+
+# macOS
+.DS_Store
+
+# Linux
+*.swp
+*.swo
+
+# Logs
+*.log
+
+# Temp
+tmp/
+temp/
+
+# Executables
+*.exe
+*.out
+*.app
+
+# Libraries
+*.dll
+*.so
+*.dylib
+
+# Debug Symbols
+*.pdb
+
+# Object files
+*.o
+*.obj
+
+# Archives
+*.a
+*.lib
+
+# Generated
+generated/
+
+# Cache
+.cache/
