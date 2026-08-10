@@ -1,7 +1,6 @@
 #include "Application.hpp"
 #include "Logger.hpp"
-#include "Timer.hpp"
-
+#include <iostream>
 
 void Application::Initialize()
 {
@@ -11,7 +10,6 @@ void Application::Initialize()
 void Application::Shutdown()
 {
     Logger::Info("Shutting down Application");
-    exit(0);
 }
 
 void Application::Run()

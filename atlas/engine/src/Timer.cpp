@@ -2,26 +2,32 @@
 #include <iostream>
 
 void Timer::StartTimer() {
-	startTime = high_resolution_clock::now();
+	startTime = Clock::now();
 	lastFrameTime = startTime;
 }
 
 void Timer::Update() {
-	auto currentTime = high_resolution_clock::now();
-	deltaTime = currentTime - lastFrameTime;
+	TimePoint currentTime = Clock::now();
+	std::chrono::duration<float> delta = currentTime - lastFrameTime;
+	deltaTime = delta.count();
 	lastFrameTime = currentTime;
-	fps = 1.0f / deltaTime.count();
+	if (deltaTime > 0.0f) {
+		fps = 1.0f / deltaTime;
+	}
+	else {
+		fps = 0.0f;
+	}
 }
-void Timer::GetTime() {
-	auto currentTime = high_resolution_clock::now();
-	auto elapsedTime = duration_cast<duration<milliseconds>>(currentTime - startTime);
-	std::cout << "Elapsed Time: " << elapsedTime.count() << " seconds" << std::endl;
+float Timer::GetTime() const {
+	TimePoint currentTime = Clock::now();
+	std::chrono::duration<float> elapsed = currentTime - startTime;
+	return elapsed.count();
 }
 
-void Timer::GetDeltaTime() {
-	std::cout << "Delta Time: " << deltaTime.count() << " seconds" << std::endl;
+float Timer::GetDeltaTime() const {
+	return deltaTime;
 }
 
-void Timer::GetFPS() {
-	std::cout << "FPS: " << fps << std::endl;
+float Timer::GetFPS() const {
+	return fps;
 }

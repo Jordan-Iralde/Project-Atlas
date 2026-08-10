@@ -1,20 +1,24 @@
+#pragma once
+
 #include <chrono>
-#include <iostream>
 
-using namespace std;
-using namespace std::chrono;
-
-class Timer {
+class Timer
+{
 public:
-	void StartTimer();
-	void Update();
-	void GetTime();
-	void GetDeltaTime();
-	void GetFPS();
+    void StartTimer();
+    void Update();
+
+    float GetTime() const;
+    float GetDeltaTime() const;
+    float GetFPS() const;
 
 private:
-	time_point<high_resolution_clock> startTime;
-	time_point<high_resolution_clock> lastFrameTime;
-	float deltaTime;
-	float fps;
+    using Clock = std::chrono::high_resolution_clock;
+    using TimePoint = std::chrono::time_point<Clock>;
+
+    TimePoint startTime;
+    TimePoint lastFrameTime;
+
+    float deltaTime = 0.0f;
+    float fps = 0.0f;
 };
