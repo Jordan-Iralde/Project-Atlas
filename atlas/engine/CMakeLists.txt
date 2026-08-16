@@ -1,11 +1,20 @@
 add_executable(Atlas
     src/main.cpp
-    src/Application.cpp
-    src/Logger.cpp
-    src/Window.cpp
-    src/Timer.cpp)
+
+    engine/app/Application.cpp
+
+    engine/core/Logger.cpp
+    engine/core/Timer.cpp
+
+    engine/window/Window.cpp
+)
 
 target_include_directories(Atlas
-PRIVATE
-    include
+    PRIVATE
+        engine
+)
+
+target_link_libraries(Atlas
+    PRIVATE
+        SDL3::SDL3
 )
