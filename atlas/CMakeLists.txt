@@ -10,4 +10,5 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 
 add_subdirectory(engine)
-add_subdirectory(learning)
+add_subdirectory(src)
+add_subdirectory(learning_experimental)

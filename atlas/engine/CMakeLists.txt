@@ -1,20 +1,18 @@
-add_executable(Atlas
-    src/main.cpp
+add_library(Engine
+    app/Application.cpp
 
-    engine/app/Application.cpp
+    core/Logger.cpp
+    core/Timer.cpp
 
-    engine/core/Logger.cpp
-    engine/core/Timer.cpp
-
-    engine/window/Window.cpp
+    window/Window.cpp
 )
 
-target_include_directories(Atlas
-    PRIVATE
-        engine
+target_include_directories(Engine
+    PUBLIC
+        ${CMAKE_CURRENT_SOURCE_DIR}
 )
 
-target_link_libraries(Atlas
-    PRIVATE
+target_link_libraries(Engine
+    PUBLIC
         SDL3::SDL3
 )
